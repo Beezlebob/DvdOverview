@@ -1,8 +1,8 @@
-package backEnd.runFiles;
+package backEnd.trees;
 
 import java.util.TreeSet;
 
-import backEnd.coreFiles.Dvd;
+import backEnd.core.Dvd;
 
 
 public class DvdTree {

@@ -1,4 +1,4 @@
-package backEnd.coreFiles;
+package backEnd.core;
 
 public class Location {
 	private String name;

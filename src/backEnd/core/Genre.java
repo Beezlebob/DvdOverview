@@ -1,4 +1,4 @@
-package backEnd.coreFiles;
+package backEnd.core;
 
 public class Genre {
 	private String name;
