@@ -1,6 +1,8 @@
 package backEnd.core;
 
-public class Genre {
+import java.util.Iterator;
+
+public class Genre extends SuperCore{
 	private String name;
 
 	public String getName() {
@@ -13,5 +15,11 @@ public class Genre {
 	
 	Genre(String name){
 		setName(name);
+	}
+
+	@Override
+	public Iterator<CoreInterface> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

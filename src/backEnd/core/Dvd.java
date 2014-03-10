@@ -1,9 +1,11 @@
 package backEnd.core;
 
-public class Dvd {
+import java.util.Iterator;
+
+public class Dvd extends SuperCore{
 	
 	//VARIABLES
-	private String Title;
+	private String Name;
 	private String ProdCountry;
 	private String OptionalInfo;
 	
@@ -19,11 +21,11 @@ public class Dvd {
 	private Dvd SeQuel;
 	
 	//METHODS
-	public String getTitle() {
-		return Title;
+	public String getName() {
+		return Name;
 	}
-	public void setTitle(String title) {
-		Title = title;
+	public void setName(String Name) {
+		this.Name = Name;
 	}
 	public String getProdCountry() {
 		return ProdCountry;
@@ -83,7 +85,7 @@ public class Dvd {
 	//CONSTRUCTOR
 	//Set to blank string or 0 or null if not set in adding movie
 	Dvd(String title,String prodC,String optional,int pgRating,int prodYear,Genre genre,Location location,Dvd Prequel,Dvd Sequel){
-		setTitle(title);
+		setName(title);
 		setProdCountry(prodC);
 		setOptionalInfo(optional);
 		setPgRating(pgRating);
@@ -92,5 +94,10 @@ public class Dvd {
 		setLocation(location);
 		setPreQuel(Prequel);
 		setSeQuel(Sequel);
+	}
+	@Override
+	public Iterator<CoreInterface> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

@@ -1,6 +1,8 @@
 package backEnd.core;
 
-public class Location {
+import java.util.Iterator;
+
+public class Location extends SuperCore {
 	private String name;
 
 	public String getName() {
@@ -13,5 +15,11 @@ public class Location {
 	
 	Location(String name){
 		setName(name);
+	}
+
+	@Override
+	public Iterator<CoreInterface> iterator() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }
