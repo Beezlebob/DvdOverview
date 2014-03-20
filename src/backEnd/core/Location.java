@@ -10,10 +10,10 @@ public class Location extends SuperCore {
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = name.toLowerCase();
 	}
 	
-	Location(String name){
+	public Location(String name){
 		setName(name);
 	}
 

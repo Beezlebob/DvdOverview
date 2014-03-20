@@ -10,10 +10,10 @@ public class Genre extends SuperCore{
 	}
 
 	public void setName(String name) {
-		this.name = name;
+		this.name = name.toLowerCase();
 	}
 	
-	Genre(String name){
+	public Genre(String name){
 		setName(name);
 	}
 

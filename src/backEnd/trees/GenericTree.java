@@ -4,7 +4,7 @@ import java.util.Iterator;
 
 public class GenericTree<E extends Comparable <E>> implements TreeInterface<E> {
 	
-	Node root;
+	public Node root;
 	Node current;
 	Node setIn;
 	int ant;
@@ -14,10 +14,10 @@ public class GenericTree<E extends Comparable <E>> implements TreeInterface<E> {
 		root = null;
 	}
 	
-	class Node{
-		Node left;
-		Node right;
-		E object;
+	public class Node{
+		public Node left;
+		public Node right;
+		public E object;
 		
 		Node(E e){
 			this.object = e;
@@ -34,27 +34,38 @@ public class GenericTree<E extends Comparable <E>> implements TreeInterface<E> {
 	@Override
 	public boolean add(E e) {
 		setIn = new Node(e);
+		Node previous = null;
 		if(isEmpty()){
 			root = setIn;
+			ant++;
 			return true;
 		}
 		current = root;
 		while(current != null){
 			if(setIn.object.compareTo(current.object)<0){
+				previous = current;
 				current = current.right;
 			}else if(setIn.object.compareTo(current.object)>0){
+				previous = current;
 				current = current.left;
 			}else if(setIn.object.compareTo(current.object)==0){
 				return false;
 			}
+		
 		}
-		current = setIn;
+		if(previous.object.compareTo(setIn.object)<0){
+			previous.right = setIn;
+		}else if(previous.object.compareTo(setIn.object)>0){
+			previous.left = setIn;
+		}
+		ant++;
 		return true;
 	}
 
 	@Override
 	public void clear() {
 		root = null;
+		ant = 0;
 	}
 
 	@Override
@@ -64,9 +75,9 @@ public class GenericTree<E extends Comparable <E>> implements TreeInterface<E> {
 		while(current != null){
 			if(setIn.object.compareTo(current.object)==0){
 				return true;
-			}else if(setIn.object.compareTo(current.object)<0){
+			}else if(current.object.compareTo(setIn.object)<0){
 				current = current.right;
-			}else if(setIn.object.compareTo(current.object)>0){
+			}else if(current.object.compareTo(setIn.object)>0){
 				current = current.left;
 			}
 		}

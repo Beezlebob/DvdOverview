@@ -25,7 +25,7 @@ public class Dvd extends SuperCore{
 		return Name;
 	}
 	public void setName(String Name) {
-		this.Name = Name;
+		this.Name = Name.toLowerCase();
 	}
 	public String getProdCountry() {
 		return ProdCountry;
@@ -84,7 +84,7 @@ public class Dvd extends SuperCore{
 	
 	//CONSTRUCTOR
 	//Set to blank string or 0 or null if not set in adding movie
-	Dvd(String title,String prodC,String optional,int pgRating,int prodYear,Genre genre,Location location,Dvd Prequel,Dvd Sequel){
+	public Dvd(String title,String prodC,String optional,int pgRating,int prodYear,Genre genre,Location location,Dvd Prequel,Dvd Sequel){
 		setName(title);
 		setProdCountry(prodC);
 		setOptionalInfo(optional);
@@ -94,6 +94,10 @@ public class Dvd extends SuperCore{
 		setLocation(location);
 		setPreQuel(Prequel);
 		setSeQuel(Sequel);
+	}
+	
+	public Dvd(String string) {
+		setName(string);
 	}
 	@Override
 	public Iterator<CoreInterface> iterator() {
